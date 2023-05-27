@@ -4016,7 +4016,7 @@
         new lazyload_min({
             elements_selector: "[data-src],[data-srcset]",
             class_loaded: "_lazy-loaded",
-            use_native: true
+            use_native: false
         });
         let addWindowScrollEvent = false;
         function headerScroll() {
