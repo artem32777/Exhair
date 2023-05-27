@@ -78,7 +78,16 @@
 					<p class="main__label">Воплощаем мечты о шикарных волосах в реальность</p>
 					<button data-popup="#request" class="main__btn btn" type="button">Получить консультацию</button>
 					<address class="main__address">Батуми, ул. Луки Асатиани д. 39</address>
-					<div class="main__image"><picture><source srcset="img/main.webp" type="image/webp"><img src="img/main.png" alt="Главное изображение"></picture></div>
+					<div class="main__image">
+<!-- 						<picture>
+							<source srcset="img/main.webp" type="image/webp"><img src="img/main.png" alt="Главное изображение">
+						</picture> -->
+					<img src="img/main.png" srcset="img/main-small.png 320w,
+						img/main-small.png 640w,
+						img/main.png 1024w" sizes="(max-width: 600px) 300px,
+						(max-width: 900px) 600px,
+						1024px" alt="Главное изображение">
+					</div>
 				</section>
 				<section class="page__portfolio portfolio">
 					<h2 class="portfolio__title h2">Наши работы</h2>
