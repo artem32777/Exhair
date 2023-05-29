@@ -2179,9 +2179,10 @@ body::after {
   }
 
   .main__image {
-    height: 14.25rem;
+    height: 13.1875rem;
     width: 120%;
     margin: 0 -0.9375rem;
+    padding-top: 1.125rem;
     left: -0.9375rem;
   }
 
