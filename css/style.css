@@ -247,7 +247,7 @@ body::after {
   background-color: #EAE1D7;
   padding: 6.25rem;
   width: 100%;
-  max-width: 900px;
+  max-width: 65.625rem;
 }
 
 .lock .popup__content {
@@ -478,25 +478,6 @@ body::after {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-.header._header-scroll {
-  z-index: 2;
-}
-
-.header._header-scroll::before {
-  -webkit-transition: all 0.5s ease 0s;
-  -o-transition: all 0.5s ease 0s;
-  transition: all 0.5s ease 0s;
-  opacity: 1;
-}
-
-.header._header-scroll .header__actions {
-  color: #2E2E2E;
-}
-
-.header._header-scroll .header__phone svg {
-  fill: #2E2E2E;
-}
-
 .header__container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -615,6 +596,29 @@ body::after {
 
 .header__language {
   text-decoration: underline;
+  color: #fff;
+}
+
+.header__language select {
+  -webkit-transition: color 0.2s ease 0s;
+  -o-transition: color 0.2s ease 0s;
+  transition: color 0.2s ease 0s;
+  color: #fff;
+  text-decoration: underline;
+  cursor: pointer;
+  background-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -o-appearance: none;
+  padding: 0.3125rem;
+}
+
+.header__language option {
+  background-color: #8D8B90;
+  color: #2E2E2E;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 .header__btn {
@@ -645,7 +649,40 @@ body::after {
           align-items: center;
 }
 
-.wpcf7 form {
+.form {
+  position: relative;
+  padding: 6.25rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 3.125rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: 4.375rem;
+}
+
+.form::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 300%;
+  height: 100%;
+  background-color: #EAE1D7;
+  z-index: -1;
+}
+
+.form__title {
+  margin-bottom: 1.5rem;
+}
+
+.form__label {
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.form__form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -653,7 +690,7 @@ body::after {
   caret-color: #2E2E2E;
 }
 
-.wpcf7 input {
+.form__input {
   height: 3.75rem;
   width: 16.25rem;
   color: #000;
@@ -662,52 +699,48 @@ body::after {
   border-radius: 0;
 }
 
-.wpcf7 input::-webkit-input-placeholder {
+.form__input::-webkit-input-placeholder {
   color: #8D8B90;
 }
 
-.wpcf7 input::-moz-placeholder {
+.form__input::-moz-placeholder {
   color: #8D8B90;
 }
 
-.wpcf7 input:-ms-input-placeholder {
+.form__input:-ms-input-placeholder {
   color: #8D8B90;
 }
 
-.wpcf7 input::-ms-input-placeholder {
+.form__input::-ms-input-placeholder {
   color: #8D8B90;
 }
 
-.wpcf7 input::placeholder {
+.form__input::placeholder {
   color: #8D8B90;
 }
 
-.wpcf7 input._form-error {
+.form__input._form-error {
   outline: 1px solid red;
 }
 
-.wpcf7 input._form-error::-webkit-input-placeholder {
+.form__input._form-error::-webkit-input-placeholder {
   color: red;
 }
 
-.wpcf7 input._form-error::-moz-placeholder {
+.form__input._form-error::-moz-placeholder {
   color: red;
 }
 
-.wpcf7 input._form-error:-ms-input-placeholder {
+.form__input._form-error:-ms-input-placeholder {
   color: red;
 }
 
-.wpcf7 input._form-error::-ms-input-placeholder {
+.form__input._form-error::-ms-input-placeholder {
   color: red;
 }
 
-.wpcf7 input._form-error::placeholder {
+.form__input._form-error::placeholder {
   color: red;
-}
-
-.wpcf7 span {
-  display: none;
 }
 
 .main {
@@ -845,7 +878,14 @@ body::after {
   gap: 0.3125rem;
 }
 
+.portfolio__view-all svg {
+  -webkit-transition: fill 0.3s ease 0s;
+  -o-transition: fill 0.3s ease 0s;
+  transition: fill 0.3s ease 0s;
+}
+
 .portfolio__view-all a {
+  cursor: pointer;
   text-decoration: underline;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -857,12 +897,6 @@ body::after {
   -webkit-transition: color 0.3s ease 0s;
   -o-transition: color 0.3s ease 0s;
   transition: color 0.3s ease 0s;
-}
-
-.portfolio__view-all a svg {
-  -webkit-transition: fill 0.3s ease 0s;
-  -o-transition: fill 0.3s ease 0s;
-  transition: fill 0.3s ease 0s;
 }
 
 .portfolio__slider {
@@ -970,39 +1004,6 @@ body::after {
   background: url("data:image/svg+xml,%3Csvg width=%2749%27 height=%2758%27 fill=%27none%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cpath d=%27m44.812 21.583-34.53-20.27a6.418 6.418 0 0 0-3.258-.92 6.743 6.743 0 0 0-4.806 2.024A6.963 6.963 0 0 0 .228 7.3v43.503c0 1.216.32 2.409.928 3.456a6.747 6.747 0 0 0 2.527 2.497 6.612 6.612 0 0 0 6.8-.19l34.57-22.191a7.412 7.412 0 0 0 2.562-2.772 7.555 7.555 0 0 0-.14-7.35 7.398 7.398 0 0 0-2.663-2.67z%27 fill=%27%23fff%27/%3E%3C/svg%3E") center/100% no-repeat;
 }
 
-.form {
-  position: relative;
-  padding: 6.25rem 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 3.125rem;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding-right: 4.375rem;
-}
-
-.form::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: -100%;
-  width: 300%;
-  height: 100%;
-  background-color: #EAE1D7;
-  z-index: -1;
-}
-
-.form__title {
-  margin-bottom: 1.5rem;
-}
-
-.form__label {
-  font-weight: 600;
-  font-size: 1.25rem;
-}
-
 @supports (margin-bottom: clamp( 1.25rem , 0.7790423862rem  +  2.3547880691vw , 3.125rem )) {
   .services__title {
     margin-bottom: clamp( 1.25rem , 0.7790423862rem  +  2.3547880691vw , 3.125rem );
@@ -1024,6 +1025,7 @@ body::after {
 .tabs__title {
   font-size: 1.125rem;
   font-weight: 300;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   color: #2E2E2E;
   line-height: 1;
   padding-left: 1.5rem;
@@ -1096,6 +1098,9 @@ body::after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -1105,18 +1110,20 @@ body::after {
           align-items: start;
 }
 
-.tab__text {
+.tab__content p {
   font-weight: 300;
   line-height: 1.5;
 }
 
-.tab__list {
+.tab__content ul,
+.tab__content ol {
   font-weight: 300;
   line-height: 1.5;
   margin-bottom: 2rem;
 }
 
-.tab__list li {
+.tab__content ul li,
+.tab__content ol li {
   margin-left: 1.25rem;
 }
 
@@ -1237,6 +1244,24 @@ body::after {
   height: 100%;
 }
 
+.contacts__map-poster {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
+}
+
+.contacts__map-poster.hide {
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: opacity 1.5s ease 0s;
+  -o-transition: opacity 1.5s ease 0s;
+  transition: opacity 1.5s ease 0s;
+}
+
 .swiper {
   overflow: hidden;
 }
@@ -1312,9 +1337,9 @@ body::after {
   }
 
   .btn:hover::before {
-    -webkit-transform: translate(50px, 0px);
-        -ms-transform: translate(50px, 0px);
-            transform: translate(50px, 0px);
+    -webkit-transform: translate(25px, 0px);
+        -ms-transform: translate(25px, 0px);
+            transform: translate(25px, 0px);
   }
 
   .btn-black:hover {
@@ -1324,9 +1349,9 @@ body::after {
   }
 
   .btn-black:hover::before {
-    -webkit-transform: translate(50px, 0px);
-        -ms-transform: translate(50px, 0px);
-            transform: translate(50px, 0px);
+    -webkit-transform: translate(25px, 0px);
+        -ms-transform: translate(25px, 0px);
+            transform: translate(25px, 0px);
   }
 }
 
@@ -1361,6 +1386,29 @@ body::after {
     opacity: 0;
     -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .header._header-scroll {
+    z-index: 2;
+  }
+
+  .header._header-scroll::before {
+    -webkit-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s;
+    opacity: 1;
+  }
+
+  .header._header-scroll .header__actions {
+    color: #2E2E2E;
+  }
+
+  .header._header-scroll .header__phone svg {
+    fill: #2E2E2E;
+  }
+
+  .header._header-scroll .header__language select {
+    color: #2E2E2E;
   }
 
 @supports (padding-top: clamp( 1rem , -0.951048951rem  +  3.1468531469vw , 2.125rem )) {
@@ -1560,6 +1608,10 @@ body::after {
     background-color: #2E2E2E;
   }
 
+  .portfolio__view-all svg {
+    margin-left: 1.125rem;
+  }
+
   .portfolio__arrows {
     position: absolute;
     top: 0;
@@ -1621,6 +1673,14 @@ body::after {
 }
 
 @media (min-width: 61.99875em) and (any-hover: hover) {
+  .header._header-scroll .header__phone:hover svg {
+    fill: #CCA828;
+  }
+
+  .header._header-scroll .header__language:hover select {
+    color: #CCA828;
+  }
+
   .main__instagram-link:hover svg {
     fill: #5C5BC7;
   }
@@ -1690,12 +1750,15 @@ body::after {
 
   .header {
     background-color: #fff;
+  }
+
+  .header._header-scroll {
     -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   }
 
   .header__container {
-    padding-top: 1rem;
+    padding-top: 0.8125rem;
     padding-bottom: 0;
   }
 
@@ -1720,6 +1783,11 @@ body::after {
     fill: #2E2E2E;
   }
 
+  .header__language select {
+    color: #2E2E2E;
+    margin-left: 1.25rem;
+  }
+
   .footer__container {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -1735,11 +1803,12 @@ body::after {
     display: none;
   }
 
-  .wpcf7 {
-    width: 100%;
+  .form {
+    padding: 2.5rem 0.9375rem;
+    gap: 1.25rem;
   }
 
-  .wpcf7 form {
+  .form__form {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -1747,7 +1816,7 @@ body::after {
     width: 100%;
   }
 
-  .wpcf7 input {
+  .form__input {
     width: 100%;
   }
 
@@ -1836,7 +1905,14 @@ body::after {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    margin-bottom: 1.875rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .portfolio__view-all svg {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+    margin-right: 1.25rem;
   }
 
   .portfolio__slider {
@@ -1849,11 +1925,6 @@ body::after {
 
   .portfolio__slide {
     height: 33.3125rem;
-  }
-
-  .form {
-    padding: 2.5rem 0.9375rem;
-    gap: 1.25rem;
   }
 
   .tabs__navigation {
@@ -1902,7 +1973,7 @@ body::after {
     width: 19.6875rem;
     font-size: 1.125rem;
     height: 100%;
-    top: 3.9375rem;
+    top: 3.75rem;
     left: 0;
     -webkit-transform: translate(-100%, 0px);
         -ms-transform: translate(-100%, 0px);
@@ -2000,29 +2071,29 @@ body::after {
     display: -ms-flexbox;
     display: flex;
     position: absolute;
-    opacity: 0;
-    -webkit-transform: translate(-50px, 0px);
-        -ms-transform: translate(-50px, 0px);
-            transform: translate(-50px, 0px);
-    -webkit-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
-  }
-
-  .menu-open .header__btn {
-    -webkit-transform: translate(0px, 0px);
-        -ms-transform: translate(0px, 0px);
-            transform: translate(0px, 0px);
-    opacity: 1;
   }
 
   .header__menu-instagram {
     display: block;
     margin: 0.625rem 0;
+    opacity: 0;
+    -webkit-transform: translate(100px, 0px);
+        -ms-transform: translate(100px, 0px);
+            transform: translate(100px, 0px);
+    -webkit-transition: all 0.5s ease 0.2s;
+    -o-transition: all 0.5s ease 0.2s;
+    transition: all 0.5s ease 0.2s;
   }
 
   .header__menu-instagram span {
     padding: 0.3125rem;
+  }
+
+  .menu-open .header__menu-instagram {
+    opacity: 1;
+    -webkit-transform: translate(0px, 0px);
+        -ms-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
   }
 
   .header__burger {
@@ -2217,6 +2288,15 @@ body::after {
     padding-top: 15.625rem;
   }
 
+  .portfolio__view-all {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+
+  .portfolio__view-all svg {
+    margin-right: 0;
+  }
+
   .portfolio__slide {
     height: 25rem;
   }
@@ -2230,10 +2310,6 @@ body::after {
   .popup__close:hover {
     -webkit-filter: drop-shadow(0 0 2px);
             filter: drop-shadow(0 0 2px);
-  }
-
-  .header._header-scroll .header__phone:hover svg {
-    fill: #CCA828;
   }
 
   .header__logo {
@@ -2267,6 +2343,10 @@ body::after {
     fill: #CCA828;
   }
 
+  .header__language select:hover {
+    color: #CCA828;
+  }
+
   .footer__logo {
     -webkit-transition: -webkit-filter 0.3s ease 0s;
     transition: -webkit-filter 0.3s ease 0s;
@@ -2294,7 +2374,7 @@ body::after {
     color: #CCA828;
   }
 
-  .portfolio__view-all a:hover svg {
+  .portfolio__view-all a:hover ~ svg {
     fill: #CCA828;
   }
 
