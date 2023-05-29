@@ -1889,8 +1889,6 @@ body::after {
 
   .main__image img {
     padding-top: 0.625rem;
-    width: 110%;
-    height: 120%;
   }
 
   .main__instagram {
@@ -2188,9 +2186,7 @@ body::after {
   }
 
   .main__image img {
-    max-width: 18.125rem;
-    width: 150%;
-    height: 150%;
+    max-width: 18.4375rem;
   }
 
 @supports (left: clamp( 1.25rem , -8.5714285714rem  +  49.1071428571vw , 15rem )) {
