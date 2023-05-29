@@ -2188,7 +2188,7 @@ body::after {
 
   .main__image img {
     margin-top: 1.125rem;
-    max-width: 18.4375rem;
+    width: 18.4375rem;
     height: 13.8125rem;
     bottom: 0;
   }
