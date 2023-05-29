@@ -11,7 +11,7 @@
 			opacity: 0;
 		}
 	</style>
-	<link rel="stylesheet" href="css/style.min.css?_v=20230529054713">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230529063304">
 	<link rel="shortcut icon" href="img/favicon.svg">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="theme-color" content="#8D8B90">
@@ -93,8 +93,13 @@
 					<address class="main__address">Батуми, ул. Луки Асатиани д. 39</address>
 					<div class="main__image">
 						<picture>
-							<source srcset="img/main-small.webp 320w, img/main-small.webp 768w, img/main.webp 1024w" sizes="(max-width: 600px) 300px, (max-width: 900px) 600px, 1024px" type="image/webp">
-							<img src="img/main.png" srcset="img/main-small.png 320w, img/main-small.png 640w, img/main.png 1024w" sizes="(max-width: 600px) 300px, (max-width: 900px) 600px, 1024px" alt="Главное изображение">
+							<source media="(max-width: 768px)" srcset="img/main-micro.png">
+							<source media="(max-width: 768px)" srcset="img/main-micro.webp">
+							<source media="(max-width: 992px)" srcset="img/main-small.webp">
+							<source media="(max-width: 992px)" srcset="img/main-small.png">
+							<source media="(max-width: 1024px)" srcset="img/main.png">
+							<source media="(max-width: 1024px)" srcset="img/main.webp">
+							<img src="img/main.png" alt="Главное изображение">
 						</picture>
 					</div>
 				</section>
@@ -384,7 +389,7 @@
 	</aside>
 
 
-	<script src="js/app.min.js?_v=20230529054713"></script>
+	<script src="js/app.min.js?_v=20230529063304"></script>
 </body>
 
 </html>
